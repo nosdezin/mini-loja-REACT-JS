@@ -1,0 +1,32 @@
+.card_container{
+    background-color: #222;
+    width: 13%;
+    height: 12.5vw;
+    border: 2px solid #ffbb33;
+    border-radius: 2vw;
+
+    display: inline-flex;
+    margin-right: 1.5vw;
+    margin-left: 2px;
+
+}
+
+.card_container .itens{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.card_container .itens span{
+    color: #ffbb33;
+}
+
+.card_container .itens img{
+    margin-top: 2px;
+    border: 2px solid #ffbb33;
+}
