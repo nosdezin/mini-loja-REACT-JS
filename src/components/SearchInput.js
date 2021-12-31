@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import ProdutoCard from "./ProdutoCard.js";
 import styles from "./SearchInput.module.css";
 
 export default function SearchInput() {
   const [itens, setItens] = useState([]);
+  const [NI,setNI] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/itens")
@@ -13,20 +15,58 @@ export default function SearchInput() {
       .catch((err) => console.log(err));
   }, []);
 
-  const NovosItens = itens.filter(function (obj) {
-    return obj.tipo === "chapeu";
-  });
-  
-  console.log(NovosItens);
+  function BChap() {
+    function chapeuF(obj) {
+      return obj.tipo === "chapeu";
+    }
+
+    const NovosItens = itens.filter(chapeuF);
+    setNI(NovosItens);
+  }
+
+  function BBlusa() {
+    function BlusaF(obj) {
+      return obj.tipo === "Blusa";
+    }
+
+    const NovosItens = itens.filter(BlusaF);
+    setNI(NovosItens);
+  }
+
+  function BCamisa() {
+    function CamisaF(obj) {
+      return obj.tipo === "Camisa";
+    }
+
+    const NovosItens = itens.filter(CamisaF);
+    setNI(NovosItens);
+  }
+
+  function BClear(){
+    const NovosItens = [];
+    setNI(NovosItens);
+  }
 
   return (
     <div className={styles.pesquisa_container}>
-      <button type="button">Chapeu</button>
-      <button type="button">Moletom</button>
-      <button type="button">Camisa</button>
-      <button type="button">Tenis</button>
+      <div className={styles.button_container}>
+        <button type="button" onClick={BChap}>Chapeu</button>
+        <button type="button" onClick={BBlusa}>Moletom</button>
+        <button type="button" onClick={BCamisa}>Camisa</button>
+        {/* <button type="button">Tenis</button> */}
+        <button type="button" onClick={BClear}>Limpar</button>
+      </div>
 
-      <div>{/* {itens.map()} */}</div>
+      <div className={styles.itens}>
+        {NI.map((item) => (
+          <ProdutoCard
+            nome={item.nome}
+            valor={item.preço}
+            img={item.img}
+            key={item.id}
+          />
+        ))}
+      </div>
     </div>
   );
 }

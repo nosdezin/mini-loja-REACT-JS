@@ -13,10 +13,10 @@ export default function Navbar(){
             </li>
             
 
-            {/*
+            
             <li>
-              <Link to="/company">Empresa</Link>
-            </li> */}
+              <Link to="/NovoProjeto">Novo Projeto</Link>
+            </li>
             <li>
               <Link to="/Contato">Contato</Link>
             </li>

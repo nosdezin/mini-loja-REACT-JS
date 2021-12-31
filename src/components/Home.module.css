@@ -11,3 +11,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     animation: anim 10s infinite;
 }
+
+.Home_container div{
+    margin-left: 5px;
+}
