@@ -83,6 +83,13 @@
       "preço": 80,
       "tipo": "Camisa",
       "img": "https://via.placeholder.com/80"
+    },
+    {
+      "nome": "adidas",
+      "preço": "24",
+      "tipo": "Camisa",
+      "img": "https://via.placeholder.com/80",
+      "id": 13
     }
   ],
   "categorias": [

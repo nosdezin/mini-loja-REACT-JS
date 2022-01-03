@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function NovoProjeto() {
   const [name, setname] = useState("");
   const [preco, setPreco] = useState(0);
-  const [tipo, setTipo] = useState("");
+  const [type, setTipo] = useState("");
 
   function handleChangeNome(e) {
     const valor = e.target.value;
@@ -24,23 +24,25 @@ export default function NovoProjeto() {
   }
 
   function click() {
-    if (tipo === "" || name === "" || preco === 0 || preco < 0) {
+    if (type === "" || name === "" || preco === 0 || preco < 0) {
       alert("Refaça o Formulario, você colocou alguma resposta invalida");
     } else {
-      const produto = [
-        {
-          nome: name,
-          preço: preco,
-          tipo: tipo,
-        },
-      ];
+      const produto = {
+        nome: name,
+        preço: preco,
+        tipo: type,
+        img: "https://via.placeholder.com/80",
+      };
       // alert("Deu certo")
       fetch("http://localhost:5000/itens", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(produto),
       })
         .then((resp) => resp.json())
-        .then((json) => console.log(json))
+        // .then((json) => console.log(json))
         .catch((err) => console.log(err));
     }
   }
