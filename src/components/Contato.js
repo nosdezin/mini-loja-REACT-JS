@@ -1,4 +1,4 @@
-import styles from './Contato.module.css';
+import styles from "./Contato.module.css";
 
 export default function Contato() {
   return (
@@ -8,16 +8,16 @@ export default function Contato() {
         e-mail de supporte: <span>support@loja.com</span>
       </p>
 
-        <h2>Redes Sociais</h2>
-        <p>
-            Twitter: <span>@Loja-virtual</span>
-        </p>
-        <p>
-            Facebook: <span>Loja-Virtual</span>
-        </p>
-        <p>
-            Github: <span>Nosdezin</span>
-        </p>
+      <h2>Redes Sociais</h2>
+      <p>
+        Twitter: <span>@Loja-virtual</span>
+      </p>
+      <p>
+        Facebook: <span>Loja-Virtual</span>
+      </p>
+      <p>
+        Github: <span>Nosdezin</span>
+      </p>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import styles from "./SearchInput.module.css";
 
 export default function SearchInput() {
   const [itens, setItens] = useState([]);
-  const [NI,setNI] = useState([]);
+  const [NI, setNI] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/itens")
@@ -42,7 +42,7 @@ export default function SearchInput() {
     setNI(NovosItens);
   }
 
-  function BClear(){
+  function BClear() {
     const NovosItens = [];
     setNI(NovosItens);
   }
@@ -50,11 +50,19 @@ export default function SearchInput() {
   return (
     <div className={styles.pesquisa_container}>
       <div className={styles.button_container}>
-        <button type="button" onClick={BChap}>Chapeu</button>
-        <button type="button" onClick={BBlusa}>Moletom</button>
-        <button type="button" onClick={BCamisa}>Camisa</button>
+        <button type="button" onClick={BChap}>
+          Chapeu
+        </button>
+        <button type="button" onClick={BBlusa}>
+          Moletom
+        </button>
+        <button type="button" onClick={BCamisa}>
+          Camisa
+        </button>
         {/* <button type="button">Tenis</button> */}
-        <button type="button" onClick={BClear}>Limpar</button>
+        <button type="button" onClick={BClear}>
+          Limpar
+        </button>
       </div>
 
       <div className={styles.itens}>
